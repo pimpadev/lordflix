@@ -2,6 +2,7 @@
 
 ## Local Access
 
+- Prowlarr: http://aferbor.local:9696
 - Radarr: http://aferbor.local:7878
 - Sonarr: http://aferbor.local:8989
 - Bazarr: http://aferbor.local:6767
@@ -26,4 +27,13 @@ For example, if you want to connect the Sonarr with qBitrorrent, you can use the
 ```
 host: qbittorrent
 port: 8080
+```
+
+## Docker permissions
+
+After run the containers and create the proper folders, we need to run the next commands to give the proper permissions to the folders.
+
+```bash
+sudo chown -R $USER:$USER /data
+sudo chmod -R a=,a+rX,u+w,g+w /data
 ```
