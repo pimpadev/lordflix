@@ -5,7 +5,7 @@
 - Radarr: http://aferbor.local:7878
 - Sonarr: http://aferbor.local:8989
 - Bazarr: http://aferbor.local:6767
-- SABnzbd: http://aferbor.local:8080
+- qBittorrent: http://aferbor.local:8080
 
 ## Docker-Compose Commands
 
