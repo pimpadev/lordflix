@@ -16,3 +16,14 @@
 - `sudo docker compose down` (The Docker-compose down command also stops Docker containers like the stop command does. But it goes the extra mile. Docker-compose down, doesn’t just stop the containers, it also removes them.)
 
 - `sudo docker system prune -a --volumes --force` (Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.)
+
+## Docker network
+
+All of the services are connected to the same network.
+Because of that, you can access all of the services what you need using the service name.
+For example, if you want to connect the Sonarr with qBitrorrent, you can use the next hostname:
+
+```
+host: qbittorrent
+port: 8080
+```
