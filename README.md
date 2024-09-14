@@ -1,5 +1,12 @@
 # Media Center
 
+## Local Access
+
+- Radarr: http://aferbor.local:7878
+- Sonarr: http://aferbor.local:8989
+- Bazarr: http://aferbor.local:6767
+- SABnzbd: http://aferbor.local:8080
+
 ## Docker-Compose Commands
 
 - `sudo docker compose up -d` (This Docker-compose command helps builds the image, then creates and starts Docker containers. The containers are from the services specified in the compose file. If the containers are already running and you run docker-compose up, it recreates the container.)

@@ -50,20 +50,23 @@ services:
       - /docker/appdata/bazarr:/config
       - /data/media:/data/media
 
-  sabnzbd:
-    container_name: sabnzbd
-    image: ghcr.io/hotio/sabnzbd:latest
+  qbittorrent:
+    container_name: qbittorrent
+    image: lscr.io/linuxserver/qbittorrent:latest
     restart: unless-stopped
     logging:
       driver: json-file
     ports:
       - 8080:8080
-      - 9090:9090
+      - 6881:6881
+      - 6881:6881/udp
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Amsterdam
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/sabnzbd:/config
-      - /data/usenet:/data/usenet:rw
+      - /docker/appdata/qbittorrent:/config
+      - /data/torrent:/data/torrent:rw
