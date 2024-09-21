@@ -95,8 +95,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/qbittorrent:/config
       - /data/torrent:/data/torrent:rw
-    networks:
-      - mediacenter
 
 networks:
   mediacenter:
