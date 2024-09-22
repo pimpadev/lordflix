@@ -32,7 +32,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/radarr:/config
-      - /data:/data
+      - /mnt/ext-hdd:/data
     networks:
       - mediacenter
 
@@ -51,7 +51,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/sonarr:/config
-      - /data:/data
+      - /mnt/ext-hdd:/data
     networks:
       - mediacenter
 
@@ -70,12 +70,13 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/bazarr:/config
-      - /data/media:/data/media
+      - /mnt/ext-hdd/media:/data/media
     networks:
       - mediacenter
 
   qbittorrent:
     container_name: qbittorrent
+    network_mode: host
     image: lscr.io/linuxserver/qbittorrent:latest
     restart: unless-stopped
     logging:
@@ -93,7 +94,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/qbittorrent:/config
-      - /data/torrent:/data/torrent:rw
+      - /mnt/ext-hdd/torrent:/data/torrent:rw
     networks:
       - mediacenter
 

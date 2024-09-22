@@ -8,6 +8,86 @@
 - Bazarr: http://aferbor.local:6767
 - qBittorrent: http://aferbor.local:8080
 
+## Prepare external hdd
+
+This is a guide to prepare the external hdd for the media center.
+
+### 1 - Connect the external hdd
+
+Connect the external hdd to the raspberry pi.
+
+### 2 - Identify the external hdd
+
+Open the terminal and run the next command:
+
+```bash
+lsblk
+```
+
+The output should be similar to this:
+
+```bash
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 931.5G  0 disk
+├─sda1   8:1    0   512M  0 part /boot/firmware
+├─sda2   8:2    0     1G  0 part /boot
+├─sda3   8:3    0   1.8G  0 part
+│ ├─fedora-root 253:0    0   1.8G  0 lvm  /
+│ └─fedora-swap 253:1    0     4G  0 lvm  [SWAP]
+└─sda4   8:4    0 931.5G  0 part /media/fedora
+```
+
+In this example, the external hdd is `/dev/sda`.
+
+### 3 - Format the external hdd
+
+Run the next command:
+
+```bash
+sudo mkfs.ext4 /dev/sda
+```
+
+### 4 - Mount the external hdd
+
+Run the next command:
+
+```bash
+sudo mkdir /mnt/ext-hdd
+sudo mount /dev/sda /mnt/ext-hdd
+```
+
+### 5 - Verify the mount
+
+Run the next command:
+
+```bash
+df -h
+```
+
+### 6 - Automatically mount the external hdd
+
+To automatically mount the external hdd, we need to edit the `/etc/fstab` file.
+
+Open the file with the next command:
+
+```bash
+sudo nano /etc/fstab
+```
+
+Add the next line to the end of the file:
+
+```bash
+/dev/sda /mnt/ext-hdd ext4 defaults 0 2
+```
+
+Save the file and exit the editor.
+
+### 7 - Finally reboot the raspberry pi
+
+```bash
+sudo reboot
+```
+
 ## Docker-Compose Commands
 
 - `sudo docker compose up -d` (This Docker-compose command helps builds the image, then creates and starts Docker containers. The containers are from the services specified in the compose file. If the containers are already running and you run docker-compose up, it recreates the container.)
