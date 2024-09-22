@@ -114,6 +114,6 @@ port: 8080
 After run the containers and create the proper folders, we need to run the next commands to give the proper permissions to the folders.
 
 ```bash
-sudo chown -R $USER:$USER /data
-sudo chmod -R a=,a+rX,u+w,g+w /data
+sudo chown -R $USER:$USER /mnt/ext-hdd
+sudo chmod -R a=,a+rX,u+w,g+w /mnt/ext-hdd
 ```
