@@ -76,7 +76,6 @@ services:
 
   qbittorrent:
     container_name: qbittorrent
-    network_mode: host
     image: lscr.io/linuxserver/qbittorrent:latest
     restart: unless-stopped
     logging:
