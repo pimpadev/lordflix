@@ -3,10 +3,20 @@
 ## Local Access
 
 - Prowlarr: http://aferbor.local:9696
+  - login: aferbor
+  - password: \*\*\*\*\*\*\*\*
 - Radarr: http://aferbor.local:7878
+  - login: admin
+  - password: admin
 - Sonarr: http://aferbor.local:8989
+  - login: admin
+  - password: admin
 - Bazarr: http://aferbor.local:6767
+  - login: aferbor
+  - password: \*\*\*\*\*\*\*\*
 - qBittorrent: http://aferbor.local:8080
+  - login: aferbor
+  - password: \*\*\*\*\*\*\*\*
 
 ## Prepare external hdd
 
