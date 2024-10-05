@@ -98,7 +98,9 @@ Save the file and exit the editor.
 sudo reboot
 ```
 
-## Docker-Compose Commands
+## Docker instructions
+
+### Docker-Compose Commands
 
 - `sudo docker compose up -d` (This Docker-compose command helps builds the image, then creates and starts Docker containers. The containers are from the services specified in the compose file. If the containers are already running and you run docker-compose up, it recreates the container.)
 
@@ -108,7 +110,7 @@ sudo reboot
 
 - `sudo docker system prune -a --volumes --force` (Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.)
 
-## Docker network
+### Docker network
 
 All of the services are connected to the same network.
 Because of that, you can access all of the services what you need using the service name.
@@ -119,7 +121,7 @@ host: qbittorrent
 port: 8080
 ```
 
-## Docker permissions
+### Docker permissions
 
 After run the containers and create the proper folders, we need to run the next commands to give the proper permissions to the folders.
 
@@ -127,3 +129,8 @@ After run the containers and create the proper folders, we need to run the next 
 sudo chown -R $USER:$USER /mnt/ext-hdd
 sudo chmod -R a=,a+rX,u+w,g+w /mnt/ext-hdd
 ```
+
+## Trackers
+
+- Torrenteros (ESP): https://torrenteros.org
+- Bitstream (ESP): https://bitstream.click
