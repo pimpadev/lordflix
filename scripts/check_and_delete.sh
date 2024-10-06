@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the path to the directory (change this to your absolute path)
-DIRECTORY="/home/user/tests"
+DIRECTORY="/mnt/ext-hdd/media"
 
 # Verify the path
 echo "Checking the directory: $DIRECTORY"
