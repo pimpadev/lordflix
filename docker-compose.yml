@@ -10,6 +10,8 @@ services:
     volumes:
       - /docker/appdata/jellyfin:/config
       - /mnt/ext-hdd/media:/data/movies
+    devices:
+      - /dev/dri:/dev/dri
     network_mode: "host"
 
   prowlarr:
