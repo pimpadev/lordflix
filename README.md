@@ -11,11 +11,11 @@ This guide was created for manage a media center inside a raspberry pi. The OS u
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
 - Radarr: http://aferbor.local:7878
-  - login: admin
-  - password: admin
+  - login: aferbor
+  - password: \*\*\*\*\*\*\*\*
 - Sonarr (Deactivated): http://aferbor.local:8989
-  - login: admin
-  - password: admin
+  - login: aferbor
+  - password: \*\*\*\*\*\*\*\*
 - Bazarr (Deactivated): http://aferbor.local:6767
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
