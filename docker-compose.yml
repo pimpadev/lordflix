@@ -11,6 +11,9 @@ services:
       - /docker/appdata/jellyfin:/config
       - /mnt/ext-hdd/media:/data/movies
     devices:
+      - /dev/video10:/dev/video10
+      - /dev/video11:/dev/video11
+      - /dev/video12:/dev/video12
       - /dev/dri:/dev/dri
     network_mode: "host"
 
