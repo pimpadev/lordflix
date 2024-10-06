@@ -4,6 +4,14 @@ This guide was created for manage a media center inside a raspberry pi. The OS u
 
 ## 🚦 Local Access
 
+### Server
+
+```bash
+ssh aferbor@aferbor.local
+```
+
+### Services
+
 - Jellyfin: http://aferbor.local:8096
   - login: admin
   - password: admin
