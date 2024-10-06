@@ -15,7 +15,7 @@ sudo chmod +x /path/to/script/script_name.sh
 
 ## check_and_delete.sh
 
-This script checks the media center folders and deletes the movies that are older than 30 days. You need to add the next line to the end of the file:
+This script checks the media center folders and deletes the movies that are older than 30 days. Additionally deletes the torrent file too. You need to add the next line to the end of the file:
 
 ```bash
 0 0 * * * /path/to/script/check_and_delete.sh >> /path/to/logs/check_and_delete.log 2>&1
