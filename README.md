@@ -1,4 +1,4 @@
-# Media Center
+#🎬 Media Center
 
 This guide was created for manage a media center inside a raspberry pi. The OS used is raspbian.
 
