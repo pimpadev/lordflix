@@ -3,11 +3,6 @@ services:
     container_name: jellyfin
     image: lscr.io/linuxserver/jellyfin:latest
     restart: unless-stopped
-    ports:
-      - 8096:8096
-      - 8920:8920
-      - 7359:7359/udp
-      - 1900:1900/udp
     environment:
       - PUID=1000
       - PGID=1000
@@ -54,43 +49,43 @@ services:
     networks:
       - mediacenter
 
-  sonarr:
-    container_name: sonarr
-    image: ghcr.io/hotio/sonarr:latest
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    ports:
-      - 8989:8989
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Amsterdam
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/sonarr:/config
-      - /mnt/ext-hdd:/data
-    networks:
-      - mediacenter
+  # sonarr:
+  #   container_name: sonarr
+  #   image: ghcr.io/hotio/sonarr:latest
+  #   restart: unless-stopped
+  #   logging:
+  #     driver: json-file
+  #   ports:
+  #     - 8989:8989
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #     - TZ=Europe/Amsterdam
+  #   volumes:
+  #     - /etc/localtime:/etc/localtime:ro
+  #     - /docker/appdata/sonarr:/config
+  #     - /mnt/ext-hdd:/data
+  #   networks:
+  #     - mediacenter
 
-  bazarr:
-    container_name: bazarr
-    image: ghcr.io/hotio/bazarr:latest
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    ports:
-      - 6767:6767
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Amsterdam
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/bazarr:/config
-      - /mnt/ext-hdd/media:/data/media
-    networks:
-      - mediacenter
+  # bazarr:
+  #   container_name: bazarr
+  #   image: ghcr.io/hotio/bazarr:latest
+  #   restart: unless-stopped
+  #   logging:
+  #     driver: json-file
+  #   ports:
+  #     - 6767:6767
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #     - TZ=Europe/Amsterdam
+  #   volumes:
+  #     - /etc/localtime:/etc/localtime:ro
+  #     - /docker/appdata/bazarr:/config
+  #     - /mnt/ext-hdd/media:/data/media
+  #   networks:
+  #     - mediacenter
 
   qbittorrent:
     container_name: qbittorrent

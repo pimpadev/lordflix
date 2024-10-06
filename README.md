@@ -1,22 +1,143 @@
 # Media Center
 
+This guide was created for manage a media center inside a raspberry pi. The OS used is raspbian.
+
 ## Local Access
 
+- Jellyfin: http://aferbor.local:8096
+  - login: admin
+  - password: admin
 - Prowlarr: http://aferbor.local:9696
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
 - Radarr: http://aferbor.local:7878
   - login: admin
   - password: admin
-- Sonarr: http://aferbor.local:8989
+- Sonarr (Deactivated): http://aferbor.local:8989
   - login: admin
   - password: admin
-- Bazarr: http://aferbor.local:6767
+- Bazarr (Deactivated): http://aferbor.local:6767
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
 - qBittorrent: http://aferbor.local:8080
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
+
+## Prepare SWAP memory
+
+This is a guide to prepare the SWAP memory for the media center. That will gonna help to improve the performance of the media center.
+
+### 1 - Identify the USB memory
+
+Open the terminal and run the next command:
+
+```bash
+lsblk
+```
+
+The output should be similar to this:
+
+```bash
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sdb      8:0    0 931.5G  0 disk
+├─sdb1   8:1    0   512M  0 part /boot/firmware
+├─sdb2   8:2    0     1G  0 part /boot
+├─sdb3   8:3    0   1.8G  0 part
+│ ├─fedora-root 253:0    0   1.8G  0 lvm  /
+│ └─fedora-swap 253:1    0     4G  0 lvm  [SWAP]
+└─sda4   8:4    0 931.5G  0 part /media/fedora
+```
+
+In this example, the USB memory is `/dev/sda`.
+
+### 2 - Format the USB memory
+
+Run the next command:
+
+```bash
+sudo mkfs.ext4 /dev/sdb1
+```
+
+### 3 - Verify the USB memory
+
+Run the next command:
+
+```bash
+lsblk
+```
+
+The output should be similar to this:
+
+```bash
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sdb      8:0    0 931.5G  0 disk
+```
+
+### 4 - Create the SWAP memory
+
+Run the next command:
+
+```bash
+sudo fdisk /dev/sdb
+```
+
+And follow the next steps:
+
+- Press d: Delete the existent partitions. (If exists)
+- Press n: Create a new partitions.
+- Press p: Select primary partition.
+- Press 1: Use number 1 to create the partition.
+- Press Enter: Accept the predetermined default values to use the maximum size of the disk.
+- Press t: Change the type of the partition.
+- Press 82: Choose the swap linux partition.
+- Press w: Save changes and finish.
+
+### 5 - Format the partition as SWAP
+
+Run the next command:
+
+```bash
+sudo mkswap /dev/sdb1
+```
+
+### 6 - Activate the SWAP memory
+
+Run the next command:
+
+```bash
+sudo swapon /dev/sdb1
+```
+
+### 7 - Make the SWAP memory permanent
+
+Run the next command:
+
+```bash
+sudo nano /etc/fstab
+```
+
+Add the next line to the end of the file:
+
+```bash
+/dev/sdb1 none swap sw 0 0
+```
+
+Save the file and exit the editor.
+
+### 8 - Verify the SWAP memory
+
+Run the next command:
+
+```bash
+sudo swapon --show
+```
+
+The output should be similar to this:
+
+```bash
+NAME      TYPE SIZE USED PRIO
+/dev/sdb1 partition   4G   0   -1
+```
 
 ## Prepare external hdd
 
@@ -133,4 +254,4 @@ sudo chmod -R a=,a+rX,u+w,g+w /mnt/ext-hdd
 ## Trackers
 
 - Torrenteros (ESP): https://torrenteros.org
-- Bitstream (ESP): https://bitstream.click
+- BitStream (ESP): https://bitstream.click
