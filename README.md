@@ -1,8 +1,8 @@
-#🎬 Media Center
+# 🎬 Media Center
 
 This guide was created for manage a media center inside a raspberry pi. The OS used is raspbian.
 
-## Local Access
+## 🚦 Local Access
 
 - Jellyfin: http://aferbor.local:8096
   - login: admin
@@ -23,11 +23,11 @@ This guide was created for manage a media center inside a raspberry pi. The OS u
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
 
-## Prepare SWAP memory
+## 🧠 Prepare SWAP memory
 
 This is a guide to prepare the SWAP memory for the media center. That will gonna help to improve the performance of the media center.
 
-### 1 - Identify the USB memory
+### Identify the USB memory
 
 Open the terminal and run the next command:
 
@@ -39,7 +39,7 @@ The output should be similar to this:
 
 ```bash
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sdb      8:0    0 931.5G  0 disk
+sdb      8:0    0     xG  0 disk
 ├─sdb1   8:1    0   512M  0 part /boot/firmware
 ├─sdb2   8:2    0     1G  0 part /boot
 ├─sdb3   8:3    0   1.8G  0 part
@@ -50,7 +50,7 @@ sdb      8:0    0 931.5G  0 disk
 
 In this example, the USB memory is `/dev/sda`.
 
-### 2 - Format the USB memory
+### Format the USB memory
 
 Run the next command:
 
@@ -58,7 +58,7 @@ Run the next command:
 sudo mkfs.ext4 /dev/sdb1
 ```
 
-### 3 - Verify the USB memory
+### Check the USB memory
 
 Run the next command:
 
@@ -70,10 +70,10 @@ The output should be similar to this:
 
 ```bash
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sdb      8:0    0 931.5G  0 disk
+sdb      8:0    0 xG  0 disk
 ```
 
-### 4 - Create the SWAP memory
+### Create the SWAP memory
 
 Run the next command:
 
@@ -92,7 +92,7 @@ And follow the next steps:
 - Press 82: Choose the swap linux partition.
 - Press w: Save changes and finish.
 
-### 5 - Format the partition as SWAP
+### Format the partition as SWAP
 
 Run the next command:
 
@@ -100,7 +100,7 @@ Run the next command:
 sudo mkswap /dev/sdb1
 ```
 
-### 6 - Activate the SWAP memory
+### Activate the SWAP memory
 
 Run the next command:
 
@@ -108,7 +108,7 @@ Run the next command:
 sudo swapon /dev/sdb1
 ```
 
-### 7 - Make the SWAP memory permanent
+### Make the SWAP memory permanent
 
 Run the next command:
 
@@ -124,7 +124,7 @@ Add the next line to the end of the file:
 
 Save the file and exit the editor.
 
-### 8 - Verify the SWAP memory
+### Verify the SWAP memory
 
 Run the next command:
 
@@ -139,15 +139,11 @@ NAME      TYPE SIZE USED PRIO
 /dev/sdb1 partition   4G   0   -1
 ```
 
-## Prepare external hdd
+## 💾 Prepare external hdd
 
 This is a guide to prepare the external hdd for the media center.
 
-### 1 - Connect the external hdd
-
-Connect the external hdd to the raspberry pi.
-
-### 2 - Identify the external hdd
+### Identify the external hdd
 
 Open the terminal and run the next command:
 
@@ -170,7 +166,7 @@ sda      8:0    0 931.5G  0 disk
 
 In this example, the external hdd is `/dev/sda`.
 
-### 3 - Format the external hdd
+### Format the external hdd
 
 Run the next command:
 
@@ -178,7 +174,7 @@ Run the next command:
 sudo mkfs.ext4 /dev/sda
 ```
 
-### 4 - Mount the external hdd
+### Mount the external hdd
 
 Run the next command:
 
@@ -187,7 +183,7 @@ sudo mkdir /mnt/ext-hdd
 sudo mount /dev/sda /mnt/ext-hdd
 ```
 
-### 5 - Verify the mount
+### Verify the mount
 
 Run the next command:
 
@@ -195,7 +191,7 @@ Run the next command:
 df -h
 ```
 
-### 6 - Automatically mount the external hdd
+### Automatically mount the external hdd
 
 To automatically mount the external hdd, we need to edit the `/etc/fstab` file.
 
@@ -213,13 +209,13 @@ Add the next line to the end of the file:
 
 Save the file and exit the editor.
 
-### 7 - Finally reboot the raspberry pi
+### Finally reboot the raspberry pi
 
 ```bash
 sudo reboot
 ```
 
-## Docker instructions
+## 🐳 Docker instructions
 
 ### Docker-Compose Commands
 
@@ -251,7 +247,7 @@ sudo chown -R $USER:$USER /mnt/ext-hdd
 sudo chmod -R a=,a+rX,u+w,g+w /mnt/ext-hdd
 ```
 
-## Trackers
+## 🔎 Trackers
 
 - Torrenteros (ESP): https://torrenteros.org
 - BitStream (ESP): https://bitstream.click
