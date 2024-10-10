@@ -26,5 +26,5 @@ This script checks the media center folders and deletes the movies that are olde
 This script checks the logs folder and deletes the logs that are older than 60 days. You need to add the next line to the end of the file:
 
 ```bash
-0 0 * * * /path/to/script/clean_logs.sh >> /path/to/logs/clean_logs.log 2>&1
+0 0 * * * /path/to/script/clean_logs.sh
 ```
