@@ -27,54 +27,37 @@ ssh aferbor@aferbor.local
 
 ## 🧠 Configure SWAP memory
 
-This is a guide to prepare the SWAP memory for the Raspberry Pi. That will gonna help to improve the performance of the media center.
+This configuration will gonna help to improve the performance of the media center.
 
-### Create SWAP file
+1. Create SWAP file
+  ```bash
+  sudo swapoff /swapfile
+  sudo rm /swapfile
+  sudo fallocate -2 1G /swapfile
+  sudo chmod 600 /swapfile
+  sudo mkswap /swapfile
+  ```
 
-Open the terminal and run the next command:
+2. Activate SWAP memory
+  ```bash
+  sudo swapon /swapfile
+  ```
 
-```bash
-sudo swapoff /swapfile
-sudo rm /swapfile
-sudo fallocate -2 1G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-```
+3. Persist changes editing `/etc/fstab` file
+  ```bash
+  sudo nano /etc/fstab
+  ```
+  ```bash
+  /swapfile swap swap defaults 0 0 #Add this line
+  ```
 
-### Activate SWAP memory
-
-Run the next command:
-
-```bash
-sudo swapon /swapfile
-```
-
-### Persist changes editing `/etc/fstab` file
-
-Run the next command:
-
-```bash
-sudo nano /etc/fstab
-```
-
-Add this line to the file:
-
-```bash
-/swapfile swap swap defaults 0 0
-```
-
-### Reboot and verify
-
-Run the next command:
-
-```bash
-sudo reboot
-```
-
-```bash
-free -h
-```
-
+4. Reboot and verify
+  ```bash
+  sudo reboot
+  ```
+  ```bash
+  free -h
+  ```
 
 ## 💾 Prepare external hdd
 
@@ -152,7 +135,44 @@ Save the file and exit the editor.
 sudo reboot
 ```
 
-## 🐳 Docker instructions
+## 🐳 Docker
+
+### Docker installation
+
+1. Run the following command to uninstall all conflicting packages: 
+
+```bash
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+```
+
+2. Set up Docker's apt repository.
+```bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+3. Install the Docker packages.
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+4. Verify installation.
+
+```bash
+sudo docker run hello-world
+```
 
 ### Docker-Compose Commands
 
