@@ -1,30 +1,34 @@
 # CRON Scripts
 
-This folder contains the CRON scripts to run inside the raspberry pi.
+## Execution permissions
+
+This folder contains the CRON scripts to run inside the raspberry pi. You need to execute the next command to give them execution permissions:
+
+```bash
+sudo chmod +x /home/aferbor/media-center/scripts/check_and_delete.sh
+sudo chmod +x /home/aferbor/media-center/scripts/clean_logs.sh
+```
+
+## Setup CRON services
 To access the CRON scripts, you need to run the following command:
 
 ```bash
 sudo crontab -e
 ```
 
-For each script, you need to give them execution permissions:
+Then add the next lines to the file:
 
 ```bash
-sudo chmod +x /path/to/script/script_name.sh
+0 0 * * * /home/aferbor/media-center/scripts/check_and_delete.sh >> /home/aferbor/media-center/logs/check_and_delete.log 2>&1
+0 0 * * * /home/aferbor/media-center/scripts/clean_logs.sh
 ```
 
-## check_and_delete.sh
+## Scripts explanation
 
-This script checks the media center folders and deletes the movies that are older than 30 days. Additionally deletes the torrent file too. You need to add the next line to the end of the file:
+### check_and_delete.sh
 
-```bash
-0 0 * * * /path/to/script/check_and_delete.sh >> /path/to/logs/check_and_delete.log 2>&1
-```
+This script checks the media center folders and deletes the movies that are older than 30 days. Additionally deletes the torrent file too.
 
-## clean_logs.sh
+### clean_logs.sh
 
-This script checks the logs folder and deletes the logs that are older than 60 days. You need to add the next line to the end of the file:
-
-```bash
-0 0 * * * /path/to/script/clean_logs.sh
-```
+This script checks the logs folder and deletes the logs that are older than 60 days.
