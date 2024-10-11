@@ -11,8 +11,6 @@ services:
     volumes:
       - /docker/appdata/jellyfin:/config
       - /mnt/ext-hdd/media:/data/movies
-      - /usr/bin/ffmpeg:/usr/bin/ffmpeg
-      - /usr/lib/ffmpeg:/usr/lib/ffmpeg
     devices:
       - /dev/dri:/dev/dri
     deploy:
