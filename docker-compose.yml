@@ -1,9 +1,9 @@
 services:
   jellyfin:
-    network_mode: "host"
     container_name: jellyfin
     image: lscr.io/linuxserver/jellyfin:latest
     restart: unless-stopped
+    network_mode: "host"
     environment:
       - PUID=1000
       - PGID=1000
@@ -11,10 +11,9 @@ services:
     volumes:
       - /docker/appdata/jellyfin:/config
       - /mnt/ext-hdd/media:/data/movies
+      - /usr/bin/ffmpeg:/usr/bin/ffmpeg
+      - /usr/lib/ffmpeg:/usr/lib/ffmpeg
     devices:
-      - /dev/video10:/dev/video10
-      - /dev/video11:/dev/video11
-      - /dev/video12:/dev/video12
       - /dev/dri:/dev/dri
     deploy:
       resources:
