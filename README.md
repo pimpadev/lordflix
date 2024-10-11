@@ -12,16 +12,16 @@ ssh aferbor@aferbor.local
 
 ### Services
 
-- Jellyfin: http://aferbor.local:8096
+- Jellyfin: http://aferbor:8096
   - login: admin
   - password: admin
-- Prowlarr: http://aferbor.local:9696
+- Prowlarr: http://aferbor:9696
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
-- Radarr: http://aferbor.local:7878
+- Radarr: http://aferbor:7878
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
-- qBittorrent: http://aferbor.local:8080
+- qBittorrent: http://aferbor:8080
   - login: aferbor
   - password: \*\*\*\*\*\*\*\*
 
