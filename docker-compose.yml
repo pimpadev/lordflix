@@ -47,6 +47,11 @@ services:
       - OPENVPN_USER=${NORDVPN_USER}
       - OPENVPN_PASSWORD=${NORDVPN_PWD}
       - SERVER_COUNTRIES=Netherlands
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.25'
 
   prowlarr:
     container_name: prowlarr
