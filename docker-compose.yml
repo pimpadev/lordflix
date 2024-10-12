@@ -3,7 +3,11 @@ services:
     container_name: jellyfin
     image: lscr.io/linuxserver/jellyfin:latest
     restart: unless-stopped
-    network_mode: "host"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     environment:
       - PUID=1000
       - PGID=1000
@@ -13,6 +17,7 @@ services:
       - /mnt/ext-hdd/media:/data/movies
     devices:
       - /dev/dri:/dev/dri
+    network_mode: "host"
     deploy:
       resources:
         limits:
@@ -22,6 +27,12 @@ services:
   gluetun:
     container_name: gluetun
     image: qmcgaw/gluetun
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     cap_add:
       - NET_ADMIN
     ports:
@@ -43,6 +54,9 @@ services:
     restart: unless-stopped
     logging:
       driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     environment:
       - PUID=1000
       - PGID=1000
@@ -63,6 +77,9 @@ services:
     restart: unless-stopped
     logging:
       driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     environment:
       - PUID=1000
       - PGID=1000
@@ -84,6 +101,9 @@ services:
     restart: unless-stopped
     logging:
       driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     environment:
       - PUID=1000
       - PGID=1000
