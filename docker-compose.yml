@@ -66,43 +66,28 @@ services:
           memory: 256M
           cpus: '0.25'
 
-  vpn:
-    image: ghcr.io/bubuntux/nordvpn
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
-    environment:
-      - TOKEN=${NORDVPN_TOKEN}
-      - CONNECT=Spain
-      - TECHNOLOGY=NordLynx
-      - NETWORK=192.168.1.0/24
-    ports:
-      - 8080:8080
-    sysctls:
-      - net.ipv6.conf.all.disable_ipv6=1
-    deploy:
-      resources:
-        limits:
-          memory: 256M
-          cpus: '0.25'
-
   qbittorrent:
     container_name: qbittorrent
     image: lscr.io/linuxserver/qbittorrent:latest
     restart: unless-stopped
-    network_mode: service:vpn
-    depends_on:
-      - vpn
     logging:
       driver: json-file
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Amsterdam
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/qbittorrent:/config
       - /mnt/ext-hdd/torrent:/data/torrent:rw
+    networks:
+      - mediacenter
     deploy:
       resources:
         limits:
