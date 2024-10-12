@@ -19,14 +19,30 @@ services:
           memory: 1G
           cpus: '2'
 
+  gluetun:
+    container_name: gluetun
+    image: qmcgaw/gluetun
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 9696:9696 # prowlarr
+      - 7878:7878 # radarr
+      - 8080:8080 # qbit
+      - 6881:6881 # qbit
+      - 6881:6881/udp #qbit
+    environment:
+      - VPN_SERVICE_PROVIDER=nordvpn
+      - VPN_TYPE=openvpn
+      - OPENVPN_USER=${NORDVPN_USER}
+      - OPENVPN_PASSWORD=${NORDVPN_PWD}
+      - SERVER_COUNTRIES=Netherlands
+
   prowlarr:
     container_name: prowlarr
     image: lscr.io/linuxserver/prowlarr:latest
     restart: unless-stopped
     logging:
       driver: json-file
-    ports:
-      - 9696:9696
     environment:
       - PUID=1000
       - PGID=1000
@@ -34,8 +50,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/prowlarr:/config
-    networks:
-      - mediacenter
+    network_mode: "service:gluetun"
     deploy:
       resources:
         limits:
@@ -48,8 +63,6 @@ services:
     restart: unless-stopped
     logging:
       driver: json-file
-    ports:
-      - 7878:7878
     environment:
       - PUID=1000
       - PGID=1000
@@ -58,8 +71,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/radarr:/config
       - /mnt/ext-hdd:/data
-    networks:
-      - mediacenter
+    network_mode: "service:gluetun"
     deploy:
       resources:
         limits:
@@ -72,10 +84,6 @@ services:
     restart: unless-stopped
     logging:
       driver: json-file
-    ports:
-      - 8080:8080
-      - 6881:6881
-      - 6881:6881/udp
     environment:
       - PUID=1000
       - PGID=1000
@@ -86,14 +94,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/qbittorrent:/config
       - /mnt/ext-hdd/torrent:/data/torrent:rw
-    networks:
-      - mediacenter
+    network_mode: "service:gluetun"
     deploy:
       resources:
         limits:
           memory: 256M
           cpus: '0.25'
-
-networks:
-  mediacenter:
-    driver: bridge
