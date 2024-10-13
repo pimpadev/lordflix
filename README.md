@@ -59,11 +59,11 @@ This configuration will gonna help to improve the performance of the media cente
   free -h
   ```
 
-## 💾 Prepare external hdd
+## 💾 Prepare external HDD
 
-This is a guide to prepare the external hdd for the media center.
+This is a guide to prepare the external HDD for the media center.
 
-### Identify the external hdd
+### Identify the external HDD
 
 Open the terminal and run the next command:
 
@@ -74,33 +74,55 @@ lsblk
 The output should be similar to this:
 
 ```bash
-NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sda      8:0    0 931.5G  0 disk
-├─sda1   8:1    0   512M  0 part /boot/firmware
-├─sda2   8:2    0     1G  0 part /boot
-├─sda3   8:3    0   1.8G  0 part
-│ ├─fedora-root 253:0    0   1.8G  0 lvm  /
-│ └─fedora-swap 253:1    0     4G  0 lvm  [SWAP]
-└─sda4   8:4    0 931.5G  0 part /media/fedora
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda           8:0    0 931.5G  0 disk
+└─sda1        8:1    0   512M  0 part /mnt/ext-hdd
+mmcblk0       8:2    0     1G  0 disk 
+├─mmcblk0p1   8:2    0     1G  0 part /boot/firmware
+└─mmcblk0p2   8:4    0 931.5G  0 part /
 ```
 
-In this example, the external hdd is `/dev/sda`.
+In this example, the external HDD is `/dev/sda`.
 
-### Format the external hdd
+### Umount disk
+
+We can see there are already one partition `sda1`. We need to umount before continue:
+
+```bash
+sudo umount /dev/sda1
+```
+
+### Create new partition
+If you want to delete all existing partitions and create a new partition table, you can use fdisk.
+
+Run the following command to open fdisk for the disk:
+
+```bash
+sudo fdisk /dev/sda
+```
+
+Inside **fdisk**, you can do the following:
+
+1. Press **d** to delete existing partitions (if any).
+2. Press **n** to create a new partition.
+3. Choose **p** to create a primary partition. Then, specify the size of the partition (press enter to use the entire disk).
+4. Type **w** to save the changes and exit fdisk.
+
+### Format the external HDD
 
 Run the next command:
 
 ```bash
-sudo mkfs.ext4 /dev/sda
+sudo mkfs.ext4 /dev/sda1
 ```
 
-### Mount the external hdd
+### Mount the external HDD
 
 Run the next command:
 
 ```bash
 sudo mkdir /mnt/ext-hdd
-sudo mount /dev/sda /mnt/ext-hdd
+sudo mount /dev/sda1 /mnt/ext-hdd
 ```
 
 ### Verify the mount
@@ -111,9 +133,9 @@ Run the next command:
 df -h
 ```
 
-### Automatically mount the external hdd
+### Automatically mount the external HDD
 
-To automatically mount the external hdd, we need to edit the `/etc/fstab` file.
+To automatically mount the external HDD, we need to edit the `/etc/fstab` file.
 
 Open the file with the next command:
 
@@ -124,7 +146,7 @@ sudo nano /etc/fstab
 Add the next line to the end of the file:
 
 ```bash
-/dev/sda /mnt/ext-hdd ext4 defaults 0 2
+/dev/sda1 /mnt/ext-hdd ext4 defaults 0 2
 ```
 
 Save the file and exit the editor.
@@ -203,8 +225,3 @@ After run the containers and create the proper folders, we need to run the next 
 sudo chown -R $USER:$USER /mnt/ext-hdd
 sudo chmod -R a=,a+rX,u+w,g+w /mnt/ext-hdd
 ```
-
-## 🔎 Trackers
-
-- Torrenteros (ESP): https://torrenteros.org
-- BitStream (ESP): https://bitstream.click
