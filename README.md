@@ -33,7 +33,7 @@ This configuration will gonna help to improve the performance of the media cente
   ```bash
   sudo swapoff /swapfile
   sudo rm /swapfile
-  sudo fallocate -2 1G /swapfile
+  sudo fallocate -l 2G /swapfile
   sudo chmod 600 /swapfile
   sudo mkswap /swapfile
   ```
@@ -43,7 +43,12 @@ This configuration will gonna help to improve the performance of the media cente
   sudo swapon /swapfile
   ```
 
-3. Persist changes editing `/etc/fstab` file
+3. Verify the SWAP memory is active
+  ```bash
+   swapon --show
+  ``` 
+
+4. Persist changes editing `/etc/fstab` file
   ```bash
   sudo nano /etc/fstab
   ```
@@ -51,7 +56,7 @@ This configuration will gonna help to improve the performance of the media cente
   /swapfile swap swap defaults 0 0 #Add this line
   ```
 
-4. Reboot and verify
+5. Reboot and verify
   ```bash
   sudo reboot
   ```
