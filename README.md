@@ -218,3 +218,7 @@ After run the containers and create the proper folders, we need to run the next 
 sudo chown -R $USER:$USER /mnt/ext-hdd
 sudo chmod -R a=,a+rX,u+w,g+w /mnt/ext-hdd
 ```
+
+## Private trackers with access
+ - [Torrenteros](https://torrenteros.org/) (Spanish)
+ - [ReelFliX](https://reelflix.xyz/) (English)
