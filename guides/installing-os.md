@@ -1,5 +1,7 @@
 # 💻 Installing Raspberry Pi Imager
 
+Shame on you for not knowing how to install an operating system, but I'll still help you.
+
 From the [main page](https://www.raspberrypi.com/software/) download the software to be able to burn the image to an SDCard.
 
 ## Installing Raspberry Pi OS
