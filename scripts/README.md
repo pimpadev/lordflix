@@ -1,5 +1,7 @@
 # CRON Scripts
 
+The purpose of these scripts is to maintain basic server maintenance.
+
 ## Execution permissions
 
 This folder contains the CRON scripts to run inside the raspberry pi. You need to execute the next command to give them execution permissions:
