@@ -43,6 +43,7 @@ Access the server to perform the following configurations.
   - [Configure SWAP Memory](guides/configure-swap.md)
   - [Setup external HDD](guides/setup-ext-hdd.md)
   - [Setup Docker](guides/setup-docker.md)
+  - [Setup maintenance scripts](scripts/README.md)
 
 ## 🏃‍♂️‍➡️ How to run
 
