@@ -22,7 +22,7 @@ A complete kit including case, power supply and micro sd card is recommended. In
  - [HDD 3.5 4TB](https://amzn.to/4dSOcIV)
  - [3.5-inch HDD Enclosure](https://amzn.to/4fbvoWc)
 
-### Cheaper version (Dirty rat)
+### Cheaper version (Dirty Rat)
  
  - [Raspberry PI4 4GB](https://amzn.to/3Yuo6rf)
  - [HDD 3.5 4TB](https://amzn.to/3BNyQIr)
