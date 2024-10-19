@@ -47,7 +47,7 @@ Access the server to perform the following configurations.
   - [Setup Docker](guides/setup-docker.md)
   - [Setup maintenance scripts](scripts/README.md)
 
-## 🚦 RUN LordFlix
+## 🟢 Run LordFlix
 
 There are several setups (and there will be some more in the future) depending on the configuration you want to make. Each of them has a short tutorial with explanations.
 
