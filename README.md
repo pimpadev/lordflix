@@ -1,9 +1,9 @@
-# 🎞️ LordFlix - Media Center
+# LordFlix - Media Center
 <div align="center">
- <img src="https://i.imgur.com/IPjv1Rr.jpeg" alt="Descripción de la imagen" height="500" />
+ <img src="assets/portada.jpg" alt="Descripción de la imagen" height="500" />
 </div>
 
-## LordFlix
+## 🎞️ LordFlix
 LordFlix is a multimedia center that automatically downloads and serves the latest movies and/or series of the moment. It acts similar to Netflix, Prime Video etc. but hosted from your home. In addition, with proper configuration you can access the content from anywhere in the world.
 
 This guide is prepared to set up a media center from the beginning. Including the basic hardware requirements, going through the server configuration and finally configuring the -arr software that will run the media center.
