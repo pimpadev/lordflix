@@ -1,6 +1,8 @@
 # 💾 Prepare external HDD
 
-This is a guide to prepare the external HDD for the media center. Make sure you have connected the HDD to the raspberry PI before starting the tutorial.
+You were expecting something funny? well, I've had enough. This step is important that you pay attention, so focus.
+
+This is a guide to prepare the external HDD for the media center. **Make sure you have connected the HDD to the raspberry PI before starting the tutorial**.
 
 ## Identify the external HDD
 
