@@ -45,5 +45,5 @@ This script checks the logs folder and deletes the logs that are older than 60 d
 
 ```bash
 cd
-nano lordflix/scripts/check_and_delete.sh
+nano lordflix/scripts/clean_logs.sh
 ```
