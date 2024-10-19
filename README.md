@@ -38,14 +38,14 @@ In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* versi
 
 ### Basic configuration
 
-Access the server to perform the following configurations.
+Access the server to perform the following configurations. **The order is important.**
 
 *You need [help](guides/connect-via-ssh.md)?*
 
-  - [Configure SWAP Memory](guides/configure-swap.md)
-  - [Setup external HDD](guides/setup-ext-hdd.md)
-  - [Setup Docker](guides/setup-docker.md)
-  - [Setup maintenance scripts](scripts/README.md)
+ 1. [Configure SWAP Memory](guides/configure-swap.md)
+ 2. [Setup external HDD](guides/setup-ext-hdd.md)
+ 3. [Setup Docker](guides/setup-docker.md)
+ 4. [Setup maintenance scripts](scripts/README.md)
 
 ## 🟢 Run LordFlix
 
