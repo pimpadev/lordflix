@@ -34,7 +34,7 @@ A complete kit including case, power supply and micro sd card is recommended. In
 
 ## 💻 Software
 
-In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* version. In the following link you will find the installer needed to prepare the operating system in the micro sd.
+In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* version. Headless doesn't mean that you have to rip anyone's head off, you moron. It means we're going to run the server from another computer. In the following link you will find the installer needed to prepare the operating system in the micro sd.
 
   - [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/)
 
