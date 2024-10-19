@@ -1,5 +1,7 @@
 # 🐳 Docker installation
 
+I am not going to explain much about the Docker whale, because I don't even know how it works. I only know that I use it to do what I want it to do. The same as your ex-partner did with you.
+
 First we are going to set up the equipment by executing the following commands:
 
 ```bash
