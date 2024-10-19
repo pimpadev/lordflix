@@ -51,6 +51,6 @@ Access the server to perform the following configurations. **The order is import
 
 There are several setups (and there will be some more in the future) depending on the configuration you want to make. Each of them has a short tutorial with explanations.
 
-- [Standard setup](docker-compose/README.md)
+- [Standard Setup](docker-compose/README.md)
   - Do you want more privacity? [Setup with VPN](docker-compose/vpn/README.md)
   - Want series in addition to movies? Coming soon...
