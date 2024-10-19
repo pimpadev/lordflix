@@ -8,6 +8,8 @@
 
 This guide is prepared to set up a media center from the beginning. Including the basic hardware requirements, going through the server configuration and finally configuring the *-arr* software that will run the media center.
 
+Once mounted, **this media center can be run from any existing device**. Computers, TVs, tablets, phones, etc. All you have to do is download the “Jellyfin” client which can be found in the Google Store, Apple Store, Amazon Fire Stick, and multiple TV OS. From the computer/laptop it would be simply by accessing a URL.
+
 It may seem that the execution of this tutorial is somewhat complex, but everything is properly documented so that anyone can do it. Cheer up!
 
 ## ⚙️ Hardware
