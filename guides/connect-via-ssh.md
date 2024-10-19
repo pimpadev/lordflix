@@ -9,6 +9,11 @@ And as a username and password:
 - username: admin
 - password: admin
 
+## Access to the terminal
+
+- Window users: Click windows button at the keyboard and look for `powershell`
+- MacOS users: Open terminal
+
 The command what we need to use from our terminal is:
 
 ```
