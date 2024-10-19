@@ -16,6 +16,8 @@ In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* versi
 
   - [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/)
 
+  *You need [help](guides/installing-os.md)?*
+
 ### Basic configuration
 
   - Configure SWAP Memory
