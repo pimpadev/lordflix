@@ -9,6 +9,13 @@ And as a username and password:
 - username: admin
 - password: admin
 
+Then we can connect to the server via SSH.
+
+## Access to the terminal
+
+- Window users: Click windows button at the keyboard and look for `powershell`
+- MacOS users: Open terminal
+
 The command what we need to use from our terminal is:
 
 ```
@@ -16,3 +23,7 @@ ssh admin@raspberrypi.local
 ```
 
 And finally introduce the password once the server asks for it.
+
+---
+
+**IMPORTANT:** You need to be on the same network as the Raspberry Pi. That means you must also be connected to the wifi. It seemed obvious? well, many other things that I have had to explain to you seem obvious to me.

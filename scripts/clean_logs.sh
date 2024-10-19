@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the path to the logs directory (change this to your absolute path)
-LOG_DIRECTORY="/home/aferbor/media-center/logs"
+LOG_DIRECTORY="/home/<USER>/lordflix/logs"
 
 # Verify the path
 echo "Checking the logs directory: $LOG_DIRECTORY"
