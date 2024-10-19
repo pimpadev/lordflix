@@ -62,7 +62,7 @@ sudo reboot
 
 ## Verify Verify
 
-Verify
+Verify.
 
 ```bash
 free -h
