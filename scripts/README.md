@@ -37,13 +37,13 @@ Then add the next lines to the file:
 
 This script checks the media center folders and deletes the movies that are older than 30 days. Additionally deletes the torrent file too.
 
+### clean_logs.sh
+
+This script checks the logs folder and deletes the logs that are older than 60 days.
+
 **VERY VERY VERY IMPORTANT** You need to enter inside this script and modify the `<USER>` place holder as you did before:
 
 ```bash
 cd
 nano lordflix/scripts/check_and_delete.sh
 ```
-
-### clean_logs.sh
-
-This script checks the logs folder and deletes the logs that are older than 60 days.
