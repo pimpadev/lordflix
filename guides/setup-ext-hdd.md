@@ -110,7 +110,7 @@ Save the file and exit the editor.
 
 ## Reboot
 
-Finally reboot the Raspberry Pi
+Finally reboot the Raspberry Pi.
 
 ```bash
 sudo reboot
