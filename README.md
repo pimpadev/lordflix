@@ -57,4 +57,4 @@ There are several setups (and there will be some more in the future) depending o
 
 - [Standard Setup](docker-compose/README.md)
   - Do you want more privacity? [Setup with VPN](docker-compose/vpn/README.md)
-  - Want series in addition to movies? Coming soon...
+  - Want series in addition to movies? Wait for it or buy Netflix.
