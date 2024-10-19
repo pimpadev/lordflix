@@ -24,6 +24,7 @@ A complete kit including case, power supply and micro sd card is recommended. In
  - [HDD 3.5 4TB](https://amzn.to/3BNyQIr)
  - [3.5-inch HDD Enclosure](https://amzn.to/48aRshz)
 
+*Any unused raspberry you have at home along with any external hard drive lost in a drawer can work in this tutorial.*
 ## 💻 Software
 
 In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* version. In the following link you will find the installer needed to prepare the operating system in the micro sd.
