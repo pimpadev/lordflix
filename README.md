@@ -1,6 +1,6 @@
 # 🎞️ LordFlix - Media Center
 
-This guide was created for manage a media center inside a Raspberry Pi. 
+This guide is prepared to set up a media center from the beginning. Including the basic hardware requirements, going through the server configuration and finally configuring the -arr software that will run the media center.
 
 ## ⚙️ Hardware
 
