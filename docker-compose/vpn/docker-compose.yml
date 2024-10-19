@@ -39,7 +39,7 @@ services:
       - 9696:9696 # prowlarr
       - 7878:7878 # radarr
       - 8080:8080 # qbit
-      - 6881:6881 #qbit
+      - 6881:6881 # qbit
     environment:
       - VPN_SERVICE_PROVIDER=nordvpn
       - VPN_TYPE=openvpn
