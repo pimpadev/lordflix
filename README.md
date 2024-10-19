@@ -30,7 +30,7 @@ A complete kit including case, power supply and micro sd card is recommended. In
 
 **Any unused raspberry you have at home along with any external hard drive lost in a drawer can work in this tutorial. I highly recommend that you have at least 2GB of RAM and 3TB of disk space.*
 
-**The better the hardware used, the more clients/persons can consume the server at the same time.*
+***The better the hardware used, the more clients/persons can consume the server at the same time.*
 
 ## 💻 Software
 
