@@ -14,7 +14,11 @@ Click continue to reach the settings section.
 
 ### Custom OS settings
 
-A section asking for **"Edit settings"** will appear. We need to **fill in all the fields on the General tab**: hostname, username / password, wireless LAN (if you plan to use Wi-Fi, and locale settings.
+A section asking for **"Edit settings"** will appear. We need to **fill in all the fields on the General tab**: 
+  - Hostname
+  - Username / Password
+  - Wireless LAN (if you plan to use Wi-Fi)
+  - Locale settings.
 
 Finally on the Services tab, **toggle enable SSH to on** and **select "Use password authentication."**  Then **click Save**.
 
