@@ -9,6 +9,8 @@ And as a username and password:
 - username: admin
 - password: admin
 
+Then we can connect to the server via SSH.
+
 ## Access to the terminal
 
 - Window users: Click windows button at the keyboard and look for `powershell`
