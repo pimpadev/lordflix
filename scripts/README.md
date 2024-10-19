@@ -1,6 +1,6 @@
 # CRON Scripts
 
-The purpose of these scripts is to maintain basic server maintenance.
+These scripts will help you against digital diogenes. Because I know that on your own you will not delete anything and you will end up with a crashed system.
 
 ## Execution permissions
 
