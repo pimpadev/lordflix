@@ -2,6 +2,11 @@
 
 This guide was created for manage a media center inside a Raspberry Pi. The OS used is **Raspberry Pi OS Lite** *(headless)*. The host name used for this guide was configured at the definition of the *Raspberry PI OS Server.*
 
+## 🏃‍♂️‍➡️ How to run
+
+- [Default setup](docker-compose/README.md)
+  - [With VPN](docker-compose/vpn/README.md) 
+
 ## 🚦 Local Access
 
 ### Server
