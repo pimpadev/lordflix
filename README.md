@@ -2,13 +2,21 @@
 
 This guide was created for manage a media center inside a Raspberry Pi. 
 
-## ⚙️ Hardware recommended
+## ⚙️ Hardware
 
 A complete kit including case, power supply and micro sd card is recommended. In addition, an internal hard disk will be added to store the contents of the media server.
 
- - [Raspberry PI](https://amzn.to/4hq9mRN)
+### Recommended
+
+ - [Raspberry PI5 8GB](https://amzn.to/4hq9mRN)
  - [HDD 3.5 4TB](https://amzn.to/4dSOcIV)
  - [3.5-inch HDD Enclosure](https://amzn.to/4fbvoWc)
+
+### Cheaper
+ 
+ - [Raspberry PI4 4GB](https://amzn.to/3Yuo6rf)
+ - [HDD 3.5 4TB](https://amzn.to/3BNyQIr)
+ - [3.5-inch HDD Enclosure](https://amzn.to/48aRshz)
 
 ## 💻 Software
 
