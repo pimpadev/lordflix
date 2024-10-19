@@ -26,4 +26,4 @@ And finally introduce the password once the server asks for it.
 
 ---
 
-**IMPORTANT:** You need to be on the same network as the raspberry pi. That means you must also be connected to the wifi.
+**IMPORTANT:** You need to be on the same network as the Raspberry Pi. That means you must also be connected to the wifi.
