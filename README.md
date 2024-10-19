@@ -20,6 +20,10 @@ In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* versi
 
 ### Basic configuration
 
+Access the server to perform the following configurations.
+
+*You need [help](guides/connect-via-ssh.md)?*
+
   - Configure SWAP Memory
   - Setup external HDD
   - Setup Docker
