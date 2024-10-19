@@ -37,7 +37,7 @@ Then add the next lines to the file:
 
 This script checks the media center folders and deletes the movies that are older than 30 days. Additionally deletes the torrent file too.
 
-**VERY VERY VERY IMPORTANT** You need to enter inside this script and modify the `<USER>` blace holder as you did before:
+**VERY VERY VERY IMPORTANT** You need to enter inside this script and modify the `<USER>` place holder as you did before:
 
 ```bash
 cd
