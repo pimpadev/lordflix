@@ -47,36 +47,10 @@ Access the server to perform the following configurations.
   - [Setup Docker](guides/setup-docker.md)
   - [Setup maintenance scripts](scripts/README.md)
 
-## 🏃‍♂️‍➡️ How to run
+## 🚦 RUN LordFlix
 
-- [Default setup](docker-compose/README.md)
-  - [With VPN](docker-compose/vpn/README.md) 
+There are several default setups (and there will be some more in the future) depending on the configuration you want to make. Each of them has a short tutorial with explanations.
 
-## 🚦 Local Access
-
-### Server
-
-```bash
-ssh aferbor@aferbor.local
-```
-
-### Services
-
-- Jellyfin: http://aferbor.local:8096
-  - login: admin
-  - password: admin
-- Prowlarr: http://aferbor.local:9696
-  - login: aferbor
-  - password: \*\*\*\*\*\*\*\*
-- Radarr: http://aferbor.local:7878
-  - login: aferbor
-  - password: \*\*\*\*\*\*\*\*
-- qBittorrent: http://aferbor.local:8080
-  - login: aferbor
-  - password: \*\*\*\*\*\*\*\*
-
-## Private trackers with access
- - [Torrenteros](https://torrenteros.org/) (Spanish)
- - [ReelFliX](https://reelflix.xyz/) (English)
- - [DigitalCore](https://digitalcore.club/) (English)
- - [HDZero](https://hdzero.org/) (Spanish)
+- [Standard setup](docker-compose/README.md)
+  - Do you want more privacity? [Setup with VPN](docker-compose/vpn/README.md)
+  - Want series in addition to movies? Coming soon...
