@@ -227,3 +227,5 @@ sudo chmod -R a=,a+rX,u+w,g+w /mnt/ext-hdd
 ## Private trackers with access
  - [Torrenteros](https://torrenteros.org/) (Spanish)
  - [ReelFliX](https://reelflix.xyz/) (English)
+ - [DigitalCore](https://digitalcore.club/) (English)
+ - [HDZero](https://hdzero.org/) (Spanish)
