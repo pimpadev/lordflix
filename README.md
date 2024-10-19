@@ -42,7 +42,7 @@ In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* versi
 
 ### Basic configuration
 
-Access the server to perform the following configurations. **The order is important.**
+Access the server to perform the following configurations. **The order is important.** I'm not joking. It is.
 
 *You need [help](guides/connect-via-ssh.md)?*
 
