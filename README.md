@@ -1,6 +1,26 @@
-# 🎬 Media Center
+# 🎞️ LordFlix - Media Center
 
-This guide was created for manage a media center inside a Raspberry Pi. The OS used is **Raspberry Pi OS Lite** *(headless)*. The host name used for this guide was configured at the definition of the *Raspberry PI OS Server.*
+This guide was created for manage a media center inside a Raspberry Pi. 
+
+## ⚙️ Hardware recommended
+
+A complete kit including case, power supply and micro sd card is recommended. In addition, an internal hard disk will be added to store the contents of the media server.
+
+ - [Raspberry PI](https://amzn.to/4hq9mRN)
+ - [HDD 3.5 4TB](https://amzn.to/4dSOcIV)
+ - [3.5-inch HDD Enclosure](https://amzn.to/4fbvoWc)
+
+## 💻 Software
+
+In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* version. In the following link you will find the installer needed to prepare the operating system in the micro sd.
+
+  - [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/)
+
+### Basic configuration
+
+  - Configure SWAP Memory
+  - Setup external HDD
+  - Setup Docker
 
 ## 🏃‍♂️‍➡️ How to run
 
