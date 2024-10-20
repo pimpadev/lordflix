@@ -1,4 +1,9 @@
 # LordFlix - Media Center
+<div align="right">
+ 
+  [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F314ZLPT)
+</div>
+
 <div align="center">
  <img src="assets/portada.jpg" alt="Descripción de la imagen" height="500" />
 </div>
