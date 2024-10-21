@@ -1,7 +1,7 @@
-# LordFlix - Media Center
+# LordFlix - ![GitHub Release](https://img.shields.io/github/v/release/pimpadev/lordflix)
 <div align="right">
- 
-  [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F314ZLPT)
+
+ [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F314ZLPT)
 </div>
 
 <div align="center">
