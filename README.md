@@ -21,13 +21,13 @@ It may seem that the execution of this tutorial is somewhat complex, but everyth
 
 A complete kit including case, power supply and micro sd card is recommended. In addition, an internal hard disk will be added to store the contents of the media server. Don't be cheap and buy the recommended set, you beggar. Besides the fact that you will get a better return, I will get more commission, since of course the links are affiliate links. If you are poor you can choose the cheap version.
 
-### Recommended (Giga Chad)
+### Recommended (Giga Chad Version) - *265€ Approx.* 
 
  - [Raspberry PI4 8GB](https://amzn.to/3Yw64ol)
  - [HDD 3.5 4TB](https://amzn.to/4dSOcIV)
  - [3.5-inch HDD Enclosure](https://amzn.to/4fbvoWc)
 
-### Cheaper version (Dirty Rat)
+### Cheaper (Dirty Rat Version) - *175€ Approx.* 
  
  - [Raspberry PI4 4GB](https://amzn.to/3Yuo6rf)
  - [HDD 3.5 2TB](https://amzn.to/48idO0L)
