@@ -23,17 +23,17 @@ A complete kit including case, power supply and micro sd card is recommended. In
 
 ### Recommended (Giga Chad)
 
- - [Raspberry PI5 8GB](https://amzn.to/4hq9mRN)
+ - [Raspberry PI4 8GB](https://amzn.to/3Yw64ol)
  - [HDD 3.5 4TB](https://amzn.to/4dSOcIV)
  - [3.5-inch HDD Enclosure](https://amzn.to/4fbvoWc)
 
 ### Cheaper version (Dirty Rat)
  
  - [Raspberry PI4 4GB](https://amzn.to/3Yuo6rf)
- - [HDD 3.5 4TB](https://amzn.to/3BNyQIr)
- - [3.5-inch HDD Enclosure](https://amzn.to/48aRshz)
+ - [HDD 3.5 2TB](https://amzn.to/48idO0L)
+ - [3.5-inch HDD Enclosure](https://amzn.to/4hdaeZK)
 
-**Any unused raspberry you have at home along with any external hard drive lost in a drawer can work in this tutorial. I highly recommend that you have at least 2GB of RAM and 3TB of disk space.*
+**Any unused raspberry you have at home along with any external hard drive lost in a drawer can work in this tutorial. I highly recommend that you have at least 2GB of RAM and 2TB of disk space.*
 
 ***The better the hardware used, the more clients/persons can consume the media center at the same time.*
 
