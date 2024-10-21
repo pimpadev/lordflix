@@ -16,7 +16,7 @@ sudo chmod +x /home/$USER/lordflix/scripts/clean_logs.sh
 To access the CRON scripts, you need to run the following command:
 
 ```bash
-sudo crontab -e
+crontab -e
 ```
 
 Then add the next lines to the file:
