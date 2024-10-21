@@ -8,6 +8,9 @@ TORRENT_DIRECTORY="/mnt/ext-hdd/torrent/radarr"
 check_and_delete_old_dirs() {
     local dir_path="$1"
 
+    # Get the current date in the format [YYYY-MM-DD]
+    current_date=$(date +"[%Y-%m-%d]")
+
     # Check if the directory exists
     if [ -d "$dir_path" ]; then
         # Iterate over all directories in the folder
@@ -19,7 +22,7 @@ check_and_delete_old_dirs() {
 
                 # Check if the directory is older than 20 days (1,728,000 seconds)
                 if [ "$DIR_AGE" -gt 1728000 ]; then
-                    echo "The directory '$DIR' is older than 20 days and will be deleted."
+                    echo "$current_date The directory '$DIR' is older than 20 days and will be deleted."
                     rm -r "$DIR"  # Remove the directory and its contents
                 fi
             fi
