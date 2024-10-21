@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Specify the paths to the directories (change these to your absolute paths)
 MEDIA_DIRECTORY="/mnt/ext-hdd/media"
 TORRENT_DIRECTORY="/mnt/ext-hdd/torrent/radarr"
