@@ -1,4 +1,4 @@
-# LordFlix - ![GitHub Release](https://img.shields.io/github/v/release/pimpadev/lordflix)
+# LordFlix - ![GitHub Release](https://img.shields.io/github/v/release/pimpadev/lordflix) ![GitHub License](https://img.shields.io/github/license/pimpadev/lordflix)
 <div align="right">
 
  [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F314ZLPT)
