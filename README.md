@@ -19,7 +19,7 @@ It may seem that the execution of this tutorial is somewhat complex, but everyth
 
 ## ⚙️ Hardware
 
-A complete kit including case, power supply and micro sd card is recommended. In addition, an internal hard disk will be added to store the contents of the media server. Don't be cheap and buy the recommended set, you beggar. Besides the fact that you will get a better return, I will get more commission, since of course the links are affiliate links. If you are poor you can choose the cheap version.
+A complete kit including case, power supply and micro sd card is recommended. In addition, an internal hard disk will be added to store the contents of the media server. Don't be cheap and buy the recommended set, you beggar. Besides the fact that you will get a better return, I will get more commission, since of course the links are affiliate links. If you are poor you can choose the *Dirty Rat* version.
 
 ### Recommended (Giga Chad Version) - *265€ Approx.* 
 
