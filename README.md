@@ -18,17 +18,14 @@ Once mounted, **this media center can be run from any existing device**. Compute
 It may seem that the execution of this tutorial is somewhat complex, but everything is properly documented so that anyone can do it. Cheer up!
 
 ## ⚙️ Hardware
-
 A complete kit including case, power supply and micro sd card is recommended. In addition, an internal hard disk will be added to store the contents of the media server. Don't be cheap and buy the recommended set, you beggar. Besides the fact that you will get a better return, I will get more commission, since of course the links are affiliate links. If you are poor you can choose the *Dirty Rat* version.
 
 ### Recommended (Giga Chad Version) - *265€ Approx.* 
-
  - [Raspberry PI4 8GB](https://amzn.to/3Yw64ol)
  - [HDD 3.5 4TB](https://amzn.to/4dSOcIV)
  - [3.5-inch HDD Enclosure](https://amzn.to/4fbvoWc)
 
 ### Cheaper (Dirty Rat Version) - *175€ Approx.* 
- 
  - [Raspberry PI4 4GB](https://amzn.to/3Yuo6rf)
  - [HDD 3.5 2TB](https://amzn.to/48idO0L)
  - [3.5-inch HDD Enclosure](https://amzn.to/4hdaeZK)
@@ -39,17 +36,25 @@ A complete kit including case, power supply and micro sd card is recommended. In
 
 ## 💻 Software
 
+### Raspberry Pi OS Lite
 In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* version. Headless doesn't mean that you have to rip anyone's head off, you moron. It means we're going to run the server from another computer. In the following link you will find the installer needed to prepare the operating system in the micro sd.
 
   - [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/)
 
-  *You need [help](guides/installing-os.md)?*
+  *Do you need [help](guides/installing-os.md) to prepare the operating system?*
 
-### Basic configuration
+### LordFlix
+To download LordFlix run this command:
+```bash
+cd ~
+git clone https://github.com/pimpadev/lordflix.git
+```
+**The folder selected in the tutorial is the User folder. If you change the destination indicated in the previous command, you will have to make other modifications for its use. It is recommended not to move the folder once downloaded.*
 
+## ⚙️ Basic configuration
 Access the server to perform the following configurations. **The order is important.** I'm not joking. It is.
 
-*You need [help](guides/connect-via-ssh.md)?*
+*Do you need [help](guides/connect-via-ssh.md) to access via SSH?*
 
  1. [Configure SWAP Memory](guides/configure-swap.md)
  2. [Setup external HDD](guides/setup-ext-hdd.md)
@@ -57,7 +62,6 @@ Access the server to perform the following configurations. **The order is import
  4. [Setup maintenance scripts](scripts/README.md)
 
 ## 🟢 Run LordFlix
-
 There are several setups (and there will be some more in the future) depending on the configuration you want to make. Each of them has a short tutorial with explanations.
 
 - [Standard Setup](docker-compose/README.md)
