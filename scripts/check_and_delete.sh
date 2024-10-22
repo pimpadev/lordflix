@@ -21,12 +21,12 @@ check_and_delete_old_dirs() {
                 # Get the directory's age in seconds
                 DIR_AGE=$(($(date +%s) - $(stat -c %Y "$DIR")))
 
-                # Check if the directory is older than 20 days (1,728,000 seconds)
-                if [ "$DIR_AGE" -gt 1728000 ]; then
-                    echo "$current_date The directory '$DIR' is older than 20 days and will be deleted."
-                    rm -r "$DIR"  # Remove the directory and its contents
-                    deleted_any=true
-                fi
+		# Check if the directory is older than 15 days (1,296,000 seconds)
+		if [ "$DIR_AGE" -gt 1296000 ]; then
+		    echo "$current_date The directory '$DIR' is older than 15 days and will be deleted."
+		    rm -r "$DIR"  # Remove the directory and its contents
+		    deleted_any=true
+		fi
             fi
         done
 
