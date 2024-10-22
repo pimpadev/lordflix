@@ -43,6 +43,11 @@ In this tutorial we will install the **Raspberry Pi OS Lite** *(headless)* versi
 
   *Do you need [help](guides/installing-os.md) to prepare the operating system?*
 
+## ⚙️ Basic configuration
+**Access the server** to perform the following configurations. **The order is important.** I'm not joking. It is.
+
+*Do you need [help](guides/connect-via-ssh.md) to access the server?*
+
 ### LordFlix
 To download LordFlix run this command:
 ```bash
@@ -51,11 +56,7 @@ git clone https://github.com/pimpadev/lordflix.git
 ```
 **The folder selected in the tutorial is the User folder. If you change the destination indicated in the previous command, you will have to make other modifications for its use. It is recommended not to move the folder once downloaded.*
 
-## ⚙️ Basic configuration
-Access the server to perform the following configurations. **The order is important.** I'm not joking. It is.
-
-*Do you need [help](guides/connect-via-ssh.md) to access via SSH?*
-
+### Next steps
  1. [Configure SWAP Memory](guides/configure-swap.md)
  2. [Setup external HDD](guides/setup-ext-hdd.md)
  3. [Setup Docker](guides/setup-docker.md)
