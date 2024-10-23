@@ -2,7 +2,6 @@
 
 # Specify the paths to the directories (change these to your absolute paths)
 MEDIA_DIRECTORY="/mnt/ext-hdd/media"
-TORRENT_DIRECTORY="/mnt/ext-hdd/torrent/radarr"
 
 # Function to check and delete old directories
 check_and_delete_old_dirs() {
@@ -21,9 +20,9 @@ check_and_delete_old_dirs() {
                 # Get the directory's age in seconds
                 DIR_AGE=$(($(date +%s) - $(stat -c %Y "$DIR")))
 
-		# Check if the directory is older than 15 days (1,296,000 seconds)
-		if [ "$DIR_AGE" -gt 1296000 ]; then
-		    echo "$current_date The directory '$DIR' is older than 15 days and will be deleted."
+		# Check if the directory is older than 10 days (864,000 seconds)
+		if [ "$DIR_AGE" -gt 864000 ]; then
+		    echo "$current_date The directory '$DIR' is older than 10 days and will be deleted."
 		    rm -r "$DIR"  # Remove the directory and its contents
 		    deleted_any=true
 		fi
@@ -41,6 +40,3 @@ check_and_delete_old_dirs() {
 
 # Check the first directory
 check_and_delete_old_dirs "$MEDIA_DIRECTORY"
-
-# Check the second directory
-check_and_delete_old_dirs "$TORRENT_DIRECTORY"
