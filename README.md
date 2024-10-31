@@ -8,6 +8,8 @@
  <img src="assets/portada.jpg" alt="Descripción de la imagen" height="500" />
 </div>
 
+Want to see it all working? [Demo](https://demo.jellyfin.org/stable/web/#/home.html)
+
 ## 🎞️ LordFlix
 **LordFlix** is a media center that automatically downloads and serves the latest movies and/or series of the moment. It acts similar to *Netflix*, *Prime Video* etc. but **better**. In addition, with proper configuration you can access the content **from anywhere in the world**.
 
