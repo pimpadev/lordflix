@@ -1,91 +1,142 @@
 services:
   jellyfin:
-    container_name: jellyfin
     image: lscr.io/linuxserver/jellyfin:latest
-    restart: unless-stopped
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "3"
+    container_name: jellyfin
+    network_mode: host
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Amsterdam
+      - TZ=Etc/UTC
     volumes:
       - /docker/appdata/jellyfin:/config
-      - /mnt/ext-hdd/media:/data/movies
+      - /mnt/ext-hdd/media/tvseries:/data/tvshows
+      - /mnt/ext-hdd/media/movies:/data/movies
     devices:
       - /dev/dri:/dev/dri
-    network_mode: "host"
-    deploy:
-      resources:
-        limits:
-          memory: 1G
-          cpus: '2'
-
-  prowlarr:
-    container_name: prowlarr
-    image: lscr.io/linuxserver/prowlarr:latest
-    restart: unless-stopped
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
+    deploy:
+      replicas: ${JELLYFIN_REPLICAS}
+      resources:
+        limits:
+          memory: 1G
+          cpus: "2"
+    restart: unless-stopped
+
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - VERSION=docker
+      - PLEX_CLAIM=${PLEX_CLAIM_TOKEN}
+    volumes:
+      - /docker/appdata/plex:/config
+      - /mnt/ext-hdd/media/tvseries:/tv
+      - /mnt/ext-hdd/media/movies:/movies
+    devices:
+      - /dev/dri:/dev/dri
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      replicas: ${PLEX_REPLICAS}
+      resources:
+        limits:
+          memory: 1G
+          cpus: "2"
+    restart: unless-stopped
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
     ports:
       - 9696:9696
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Amsterdam
+      - TZ=Etc/UTC
     volumes:
-      - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/prowlarr:/config
     networks:
       - mediacenter
-    deploy:
-      resources:
-        limits:
-          memory: 256M
-          cpus: '0.25'
-
-  radarr:
-    container_name: radarr
-    image: ghcr.io/hotio/radarr:latest
-    restart: unless-stopped
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.25"
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
     ports:
       - 7878:7878
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Amsterdam
+      - TZ=Etc/UTC
     volumes:
-      - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/radarr:/config
       - /mnt/ext-hdd:/data
     networks:
       - mediacenter
-    deploy:
-      resources:
-        limits:
-          memory: 256M
-          cpus: '0.25'
-
-  qbittorrent:
-    container_name: qbittorrent
-    image: lscr.io/linuxserver/qbittorrent:4.6.7
-    restart: unless-stopped
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
+    deploy:
+      replicas: ${RADARR_REPLICAS}
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.25"
+    restart: unless-stopped
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    ports:
+      - 8989:8989
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /docker/appdata/sonarr:/config
+      - /mnt/ext-hdd:/data
+    networks:
+      - mediacenter
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      replicas: ${SONARR_REPLICAS}
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.25"
+    restart: unless-stopped
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:4.6.7
+    container_name: qbittorrent
     ports:
       - 8080:8080
       - 6881:6881
@@ -93,20 +144,25 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Amsterdam
+      - TZ=Etc/UTC
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
-      - /etc/localtime:/etc/localtime:ro
       - /docker/appdata/qbittorrent:/config
-      - /mnt/ext-hdd/torrent:/data/torrent:rw
+      - /mnt/ext-hdd/torrents:/data/torrents
     networks:
       - mediacenter
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     deploy:
       resources:
         limits:
           memory: 512M
-          cpus: '0.5'
+          cpus: "0.5"
+    restart: unless-stopped
 
 networks:
   mediacenter:
