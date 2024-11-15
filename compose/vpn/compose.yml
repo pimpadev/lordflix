@@ -22,8 +22,8 @@ services:
       replicas: ${JELLYFIN_REPLICAS}
       resources:
         limits:
-          memory: 1G
-          cpus: "2"
+          memory: ${JELLYFIN_MEMORY}
+          cpus: ${JELLYFIN_CPUS}
     restart: unless-stopped
 
   plex:
@@ -51,8 +51,8 @@ services:
       replicas: ${PLEX_REPLICAS}
       resources:
         limits:
-          memory: 1G
-          cpus: "2"
+          memory: ${PLEX_MEMORY}
+          cpus: ${PLEX_CPUS}
     restart: unless-stopped
 
   gluetun:
@@ -81,8 +81,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 256M
-          cpus: "0.25"
+          memory: ${GLUETUN_MEMORY}
+          cpus: ${GLUETUN_CPUS}
     restart: unless-stopped
 
   prowlarr:
@@ -103,8 +103,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 256M
-          cpus: "0.25"
+          memory: ${PROWLARR_MEMORY}
+          cpus: ${PROWLARR_CPUS}
     restart: unless-stopped
 
   radarr:
@@ -127,8 +127,8 @@ services:
       replicas: ${RADARR_REPLICAS}
       resources:
         limits:
-          memory: 256M
-          cpus: "0.25"
+          memory: ${RADARR_MEMORY}
+          cpus: ${RADARR_CPUS}
     restart: unless-stopped
 
   sonarr:
@@ -153,8 +153,8 @@ services:
       replicas: ${SONARR_REPLICAS}
       resources:
         limits:
-          memory: 256M
-          cpus: "0.25"
+          memory: ${SONARR_MEMORY}
+          cpus: ${SONARR_CPUS}
     restart: unless-stopped
 
   qbittorrent:
@@ -178,6 +178,6 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512M
-          cpus: "0.5"
+          memory: ${QBITTORRENT_MEMORY}
+          cpus: ${QBITTORRENT_CPUS}
     restart: unless-stopped
