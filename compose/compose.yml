@@ -37,6 +37,7 @@ services:
       - VERSION=docker
       - PLEX_CLAIM=${PLEX_CLAIM_TOKEN}
     volumes:
+      - /tmp/plex:/transcode
       - /docker/appdata/plex:/config
       - /mnt/ext-hdd/media/tvseries:/tv
       - /mnt/ext-hdd/media/movies:/movies
