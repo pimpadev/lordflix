@@ -82,7 +82,7 @@ mmcblk0       8:2    0  57.3G  0 disk
 First we have to identify the `PARTUUID` of the disk, for this we use the following command:
 
 ```bash
-blkid /dev/sda1
+sudo blkid /dev/sda1
 ```
 
 The output should be similar to this:
