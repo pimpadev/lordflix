@@ -3,6 +3,17 @@
 # Specify the paths to the directories (change these to your absolute paths)
 MEDIA_DIRECTORY="/mnt/ext-hdd/media"
 
+# Verify if the script was called with an argument (mintues)
+if [ -z "$1" ]; then
+    echo "Error: You must provide the age in minutes as an argument."
+    echo "Use: $0 <minutes>"
+    exit 1
+fi
+
+# Conversion of minutes to seconds
+MINUTES=$1
+SECONDS=$((MINUTES * 60))
+
 # Function to check and delete old directories
 check_and_delete_old_dirs() {
     local dir_path="$1"
@@ -20,9 +31,9 @@ check_and_delete_old_dirs() {
                 # Get the directory's age in seconds
                 DIR_AGE=$(($(date +%s) - $(stat -c %Y "$DIR")))
 
-                # Check if the directory is older than 15 days (1,296,000 seconds)
-                if [ "$DIR_AGE" -gt 1296000 ]; then
-                    echo "$current_date The directory '$DIR' is older than 15 days and will be deleted."
+                # Check if the directory is older
+                if [ "$DIR_AGE" -gt "$SECONDS" ]; then
+                    echo "$current_date The directory '$DIR' will be deleted."
                     rm -r "$DIR"  # Remove the directory and its contents
                     deleted_any=true
                 fi
