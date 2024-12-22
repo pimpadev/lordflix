@@ -56,6 +56,31 @@ services:
           cpus: ${PLEX_CPUS}
     restart: unless-stopped
 
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:latest
+    container_name: overseerr
+    ports:
+      - 5055:5055
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /docker/appdata/overseerr/config:/config
+    networks:
+      - mediacenter
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: ${OVERSEERR_MEMORY}
+          cpus: ${OVERSEERR_CPUS}
+    restart: unless-stopped
+
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
