@@ -136,7 +136,7 @@ services:
     restart: unless-stopped
 
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:4.6.7
+    image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
     ports:
       - 8080:8080
