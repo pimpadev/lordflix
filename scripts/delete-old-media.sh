@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the paths to the directories (change these to your absolute paths)
-MEDIA_DIRECTORY="/mnt/ext-hdd/media"
+MOVIES_DIRECTORY="/mnt/ext-hdd/media/movies"
 
 # Verify if the script was called with an argument (mintues)
 if [ -z "$1" ]; then
@@ -30,7 +30,6 @@ check_and_delete_old_dirs() {
             if [ -d "$DIR" ]; then
                 # Get the directory's age in seconds
                 DIR_AGE=$(($(date +%s) - $(stat -c %Y "$DIR")))
-
                 # Check if the directory is older
                 if [ "$DIR_AGE" -gt "$SECONDS" ]; then
                     echo "$current_date The directory '$DIR' will be deleted."
@@ -50,4 +49,4 @@ check_and_delete_old_dirs() {
 }
 
 # Check the first directory
-check_and_delete_old_dirs "$MEDIA_DIRECTORY"
+check_and_delete_old_dirs "$MOVIES_DIRECTORY"
