@@ -2,7 +2,8 @@ services:
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
-    network_mode: host
+    ports:
+      - 8096:8096
     environment:
       - PUID=1000
       - PGID=1000
@@ -11,6 +12,8 @@ services:
       - /mnt/ext-hdd/config/jellyfin:/config
       - /mnt/ext-hdd/media/tvseries:/data/tvshows
       - /mnt/ext-hdd/media/movies:/data/movies
+    networks:
+      - mediacenter
     devices:
       - /dev/dri:/dev/dri
     logging:
