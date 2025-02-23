@@ -36,7 +36,7 @@ services:
       - LOG_LEVEL=debug
       - TZ=Etc/UTC
     volumes:
-      - /mnt/ext-hdd/config/jellyseerr:/config
+      - /mnt/ext-hdd/config/jellyseerr:/app/config
     networks:
       - mediacenter
     logging:
