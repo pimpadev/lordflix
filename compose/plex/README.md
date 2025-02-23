@@ -7,13 +7,13 @@ If you've made it this far, it means the hard part is done. What remains to be d
 Copy the `.env.example` file to `.env` and edit it to your liking.
 
 ```bash
-cp lordflix/compose/.env.example lordflix/compose/.env
+cp lordflix/compose/plex/.env.example lordflix/compose/plex/.env
 ```
 
 ## Run the services
 
 ```bash
-cd lordflix/compose/
+cd lordflix/compose/plex
 sudo docker compose up -d
 ```
 
@@ -25,7 +25,3 @@ sudo docker compose up -d
 
 1.  [Radarr]()
 2.  [Prowlarr]()
-
-## Setup _Jellyfin_ server
-
-- [Jellyfin]()
