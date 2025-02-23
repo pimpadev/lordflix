@@ -1,31 +1,4 @@
 services:
-  jellyfin:
-    image: lscr.io/linuxserver/jellyfin:latest
-    container_name: jellyfin
-    network_mode: host
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-    volumes:
-      - /docker/appdata/jellyfin:/config
-      - /mnt/ext-hdd/media/tvseries:/data/tvshows
-      - /mnt/ext-hdd/media/movies:/data/movies
-    devices:
-      - /dev/dri:/dev/dri
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "3"
-    deploy:
-      replicas: ${JELLYFIN_REPLICAS}
-      resources:
-        limits:
-          memory: ${JELLYFIN_MEMORY}
-          cpus: ${JELLYFIN_CPUS}
-    restart: unless-stopped
-
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
@@ -49,7 +22,6 @@ services:
         max-size: "10m"
         max-file: "3"
     deploy:
-      replicas: ${PLEX_REPLICAS}
       resources:
         limits:
           memory: ${PLEX_MEMORY}
