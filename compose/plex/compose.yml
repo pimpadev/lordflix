@@ -10,8 +10,8 @@ services:
       - VERSION=docker
       - PLEX_CLAIM=${PLEX_CLAIM_TOKEN}
     volumes:
-      - /tmp/plex:/transcode
-      - /docker/appdata/plex:/config
+      - /mnt/ext-hdd/config/plex/tmp:/transcode
+      - /mnt/ext-hdd/config/plex:/config
       - /mnt/ext-hdd/media/tvseries:/tv
       - /mnt/ext-hdd/media/movies:/movies
     devices:
@@ -38,7 +38,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /docker/appdata/overseerr/config:/config
+      - /mnt/ext-hdd/config/overseerr:/config
     networks:
       - mediacenter
     logging:
@@ -63,7 +63,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /docker/appdata/prowlarr:/config
+      - /mnt/ext-hdd/config/prowlarr:/config
     networks:
       - mediacenter
     logging:
@@ -88,7 +88,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /docker/appdata/radarr:/config
+      - /mnt/ext-hdd/config/radarr:/config
       - /mnt/ext-hdd:/data
     networks:
       - mediacenter
@@ -115,7 +115,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /docker/appdata/sonarr:/config
+      - /mnt/ext-hdd/config/sonarr:/config
       - /mnt/ext-hdd:/data
     networks:
       - mediacenter
@@ -146,7 +146,7 @@ services:
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
-      - /docker/appdata/qbittorrent:/config
+      - /mnt/ext-hdd/config/qbittorrent:/config
       - /mnt/ext-hdd/torrents:/data/torrents
     networks:
       - mediacenter
