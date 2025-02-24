@@ -2,7 +2,8 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
-    network_mode: host
+    ports:
+      - 32400:32400
     environment:
       - PUID=1000
       - PGID=1000
@@ -14,6 +15,8 @@ services:
       - /mnt/ext-hdd/config/plex:/config
       - /mnt/ext-hdd/media/tvseries:/tv
       - /mnt/ext-hdd/media/movies:/movies
+    networks:
+      - mediacenter
     devices:
       - /dev/dri:/dev/dri
     logging:
